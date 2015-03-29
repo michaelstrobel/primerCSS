@@ -1,0 +1,430 @@
+/*
+primerCSS
+Version: 0.1.1
+Author: Michael Strobel
+Author URI: MichaelStrobel.com
+*/
+
+/*
+Master Style Guide
+
+--------------------------
+Color Reference:
+--------------------------
+
+
+--------------------------
+Font Reference:
+--------------------------
+h1 { font-family: 'open_sansextrabold' sans-serif; }
+h2, h3, h4, h5, h6 { font-family: 'open_sanssemibold' sans-serif; }
+p, ul, ol { font-family: 'open_sanslight' Helvetica, Arial, "Lucida Grande", sans-serif; }
+h1 a { font-family: 'open_sansextrabold' sans-serif; }
+h2 a, h3 a, h4 a, h5 a, h6 a { font-family: 'open_sanssemibold' sans-serif; }
+*/
+
+/*-----------------------------------*/
+/*---------->>> FONTS <<<------------*/
+/*-----------------------------------*/
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('../fonts/OpenSans-Light-webfont.eot');
+    src: url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Light-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sanssemibold';
+    src: url('../fonts/OpenSans-Semibold-webfont.eot');
+    src: url('../fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansextrabold';
+    src: url('../fonts/OpenSans-ExtraBold-webfont.eot');
+    src: url('../fonts/OpenSans-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-ExtraBold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-ExtraBold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-ExtraBold-webfont.svg#open_sansextrabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('../fonts/OpenSans-Bold-webfont.eot');
+    src: url('../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*-----------------------------------*/
+/*---------->>> BODY <<<-------------*/
+/*-----------------------------------*/
+body:before { 
+	content: "";
+	position: fixed; 
+	top: -10px; 
+	left: 0; 
+	width: 100%; 
+	height: 10px; 
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.5); 
+	-moz-box-shadow: 0px 0px 10px rgba(0,0,0,.5); 
+	box-shadow: 0px 0px 10px rgba(0,0,0,.5); 
+	z-index:100; 
+}
+
+html, body { 
+	margin: 0 0 0 0; 
+	background: #f0f0f0;
+	height: 100%; 
+	padding: 0; 
+}
+
+/*-----------------------------------*/
+/*--------->>> GLOBAL <<<------------*/
+/*-----------------------------------*/
+img { 
+	max-width: 100%
+}
+
+img a { 
+	border: none;
+	max-width: 100% 
+}
+
+.clear { 
+	clear: both; 
+}
+
+hr {
+  background: #ddd; 
+  clear: both; 
+  float: none; 
+  width: 100%; 
+  height: 1px;
+  margin: 120px 0 120px 0;
+  border: none; 
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+/* For IE 6/7 only */
+.clearfix {
+    *zoom: 1;
+}
+
+/* Global box sizing to handling fixed pixel size gutters */
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*-----------------------------------*/
+/*--------->>> LAYOUT <<<------------*/
+/*-----------------------------------*/
+.wrap { 
+	width: 100%;
+}
+
+.container {
+	margin: 0 auto 0 auto;
+	width: 90%;
+	max-width: 960px;
+	padding: 0 0 40px 0;
+}
+
+.container-960 {
+  margin: 0 auto 0 auto;
+  width: 90%;
+  max-width: 960px;
+  padding: 0 0 40px 0;
+}
+
+.container-1080 {
+  margin: 0 auto 0 auto;
+  width: 90%;
+  max-width: 1080px;
+  padding: 0 0 40px 0;
+}
+
+.container-1140 {
+  margin: 0 auto 0 auto;
+  width: 80%;
+  max-width: 1140px;
+  padding: 0 0 40px 0;
+}
+
+.row {
+	width: 100%;
+}
+
+.col-12, 
+.col-11, 
+.col-10, 
+.col-9, 
+.col-8, 
+.col-7, 
+.col-6, 
+.col-5, 
+.col-4, 
+.col-3, 
+.col-2, 
+.col-1 {
+	padding-left: 40px;
+  	padding-right: 40px;
+  	float: left;
+  	min-height: 1px;
+}
+
+.col-12 {
+  width: 100%;
+}
+.col-11 {
+  width: 91.66666667%;
+}
+.col-10 {
+  width: 83.33333333%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-8 {
+  width: 66.66666667%;
+}
+.col-7 {
+  width: 58.33333333%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-5 {
+  width: 41.66666667%;
+}
+.col-4 {
+  width: 33.33333333%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-2 {
+  width: 16.66666667%;
+}
+.col-1 {
+  width: 8.33333333%;
+}
+
+/*-----------------------------------*/
+/*------->>> TEXT STYLES <<<---------*/
+/*-----------------------------------*/
+h1 { font-family: 'open_sansextrabold' sans-serif; }
+h2, h3, h4, h5, h6 { font-family: 'open_sanssemibold' sans-serif; }
+p, ul, ol { font-family: 'open_sanslight' Helvetica, Arial, "Lucida Grande", sans-serif; }
+h1 a { font-family: 'open_sansextrabold' sans-serif; }
+h2 a, h3 a, h4 a, h5 a, h6 a { font-family: 'open_sanssemibold' sans-serif; }
+a { text-decoration: none; font-family: 'open_sanslight' Helvetica, Arial, "Lucida Grande", sans-serif; }
+a:hover {}
+a:active { position:relative; top:1px; }
+
+/*h1 { font-size: 2em; margin: 0.67em 0; }
+h2 { font-size: 1.5em; margin: 0.83em 0; }
+h3 { font-size: 1.17em; margin: 1em 0; }
+h4 { font-size: 1em; margin: 1.33em 0; }
+h5 { font-size: 0.83em; margin: 1.67em 0; }
+h6 { font-size: 0.75em; margin: 2.33em 0; }*/
+
+h1,
+.h1 {
+  font-size: 36px; 
+  line-height: 42px;
+  margin-bottom: 15px;
+}
+
+h2,
+.h2 { 
+  font-size: 32px; 
+  line-height: 38px;
+  margin-bottom: 15px;
+}
+
+h3,
+.h3 {
+  font-size: 28px; 
+  line-height: 34px;
+  margin-bottom: 15px;
+}
+
+h4,
+.h4 {
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 15px;
+}
+
+h5,
+.h5 {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+
+h6,
+.h6 {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+
+p {
+  margin: 0 0 10px;
+  font-size: 15px; 
+  line-height: 24px;
+}
+
+p strong {
+  font-family: 'open_sansbold';
+}
+
+a {
+  font-weight: normal;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+ul {
+  list-style: disc; 
+  list-style-position: outside;
+  margin: 0 0 0 10px;
+  padding: 10px;
+}
+
+ul li { 
+  font-size: 15px; 
+  line-height: 24px;
+  font-weight: 300; 
+  color: #555;
+  margin-left: 20px;
+}
+
+ol {
+  list-style: decimal; 
+  list-style-position: outside;
+  margin: 0 0 0 10px;
+  padding: 10px;
+}
+
+ol li { 
+  font-size: 15px; 
+  line-height: 24px;
+  font-weight: 300; 
+  color: #555;
+  margin-left: 20px;
+}
+
+/*-----------------------------------*/
+/*------->>> IMAGE STYLES <<<--------*/
+/*-----------------------------------*/
+
+.alignleft { 
+  float: left; margin-right: 15px; 
+}
+
+.alignright { 
+  float: right; margin-left: 15px; 
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 30px auto 30px auto;
+}
+
+.aligncenter-tight-margin,
+div.aligncenter-tight-margin {
+    display: block;
+    margin: 15px auto 15px auto;
+}
+
+/*-----------------------------------*/
+/*------->>> BUTTON STYLES <<<-------*/
+/*-----------------------------------*/
+.btn {
+  border: none;
+  box-shadow: none;
+  border-radius: .25em;
+  font-size: 1.4rem;
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  padding: .6em 2.2em;
+  cursor: pointer;
+  background: #5f8ee4;
+}
+.btn:focus {
+  outline: none;
+}
+.no-touch .btn:hover {
+  background: #759de8;
+}
+.btn.btn-success {
+  background: #6fce72;
+}
+.no-touch .btn.btn-success:hover {
+  background: #82d485;
+}
+.btn.btn-alert {
+  background: #e4655f;
+}
+.no-touch .btn.btn-alert:hover {
+  background: #e87a75;
+}
+.btn.btn-outline {
+  color: #5f8ee4;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px #5f8ee4;
+}
+.no-touch .btn.btn-outline:hover {
+  color: #ffffff;
+  background: #5f8ee4;
+}
+@media only screen and (min-width: 768px) {
+  .btn {
+    font-size: 1.6rem;
+  }
+}
+
+.cd-buttons .cd-box:nth-of-type(2) span {
+  /* CSS class name color */
+  color: #5f8ee4;
+}
+
+/*---------------------------------------*/
+/*---->>> CUSTOM LAYOUT ELEMENTS <<<-----*/
+/*--------------------------------------*/
+
+
+/*-----------------------------------*/
+/*------>>> MEDIA QUERIES <<<--------*/
+/*-----------------------------------*/
+@media (max-width: 1000px) {
+  
+}
